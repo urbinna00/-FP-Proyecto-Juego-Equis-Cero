@@ -5,7 +5,7 @@
 
 using namespace std;
 
-bool mifunc(vector< vector<char> > array,int n){
+bool ganador_horizontal(vector< vector<char> > array,int n){
 	char aux;
 	
 	bool ganador_encontrado=false;
@@ -26,7 +26,7 @@ bool mifunc(vector< vector<char> > array,int n){
 	return ganador_encontrado;
 }
 
-bool mifunc2(vector< vector<char> > array,int n){
+bool ganador_vertical(vector< vector<char> > array,int n){
 	char aux;
 	bool ganador_encontrado=false;
 	for(int j =0;j<n;j++){
@@ -42,6 +42,37 @@ bool mifunc2(vector< vector<char> > array,int n){
 		}
 	}
 	
+	return ganador_encontrado;
+}
+
+bool ganador_diagonal(vector< vector<char> > array,int n){
+	char aux;
+	bool ganador_encontrado = false;
+	//diagonal de izquierda a derecha
+	for(int i=0;i<n;i++){
+		aux = array[i][i];
+		if(aux==array[i][i]&&array[i][i]!=' '){
+			aux==array[i][i];
+		}
+		else{
+			break;
+		}
+		if(i==n-1) ganador_encontrado=true;
+	}
+	//diagonal de derecha a izquierda
+	int cont=0;
+	for(int i=n-1;i>=0;i--)
+			if(array[i][n-1-i]=='X')
+				cont+=1;
+				
+	if(cont==n) ganador_encontrado=true;
+	
+	for(int i=n-1;i>=0;i--)
+			if(array[i][n-1-i]=='O')
+				cont+=1;
+				
+	if(cont==n) ganador_encontrado=true;
+		
 	return ganador_encontrado;
 }
 
@@ -89,9 +120,7 @@ int main(){
 			while (gato[fila-1][columna-1]!=' ');
 			gato[fila-1][columna-1]='X';
 			imprimir_gato(gato,n);
-			cout << (mifunc(gato,n) ? "Ganador encontrado" : "Todavia no hay ganador") << endl;
-			cout << (mifunc2(gato,n) ? "Ganador encontrado" : "Todavia no hay ganador") << endl;
-			if(mifunc(gato,n) || mifunc2(gato,n))
+			if(ganador_horizontal(gato,n) || ganador_vertical(gato,n) || ganador_diagonal(gato,n))
 				ganador = 1;
 			k=2;
 		}
@@ -112,14 +141,11 @@ int main(){
 			while(gato[fila-1][columna-1]!=' ');
 			gato[fila-1][columna-1]='O';
 			imprimir_gato(gato,n);
-			cout << (mifunc(gato,n) ? "Ganador encontrado" : "Todavia no hay ganador") << endl;
-			cout << (mifunc2(gato,n) ? "Ganador encontrado" : "Todavia no hay ganador") << endl;
-			if(mifunc(gato,n) || mifunc2(gato,n))
+			if(ganador_horizontal(gato,n) || ganador_vertical(gato,n) || ganador_diagonal(gato,n))
 				ganador = 2;
 			k=1;
 			
 		}
-		cout << "Termina do while" << endl;
 		}
 		while(ganador==0);
 		
