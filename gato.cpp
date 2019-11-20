@@ -48,7 +48,7 @@ bool ganador_vertical(vector< vector<char> > array,int n){
 bool ganador_diagonal(vector< vector<char> > array,int n){
 	char aux;
 	bool ganador_encontrado = false;
-	//diagonal de izquierda a derecha
+
 	for(int i=0;i<n;i++){
 		aux = array[i][i];
 		if(aux==array[i][i]&&array[i][i]!=' '){
@@ -59,7 +59,7 @@ bool ganador_diagonal(vector< vector<char> > array,int n){
 		}
 		if(i==n-1) ganador_encontrado=true;
 	}
-	//diagonal de derecha a izquierda
+
 	int cont=0;
 	for(int i=n-1;i>=0;i--)
 			if(array[i][n-1-i]=='X')
@@ -91,8 +91,8 @@ void imprimir_gato(vector< vector<char> > gato,int n){
 
 
 int main(){
-	int n;
-	int k=1,fila,columna,opcion;
+	int n,nnew;
+	int k=1,fila,columna,opcion=0;
 	int ganador = 0;
 	cout<<"    EL JUEGO DE EL GATO (X/0)\n";
 	cout<<"formas de ganar: "<<endl;
@@ -158,12 +158,23 @@ int main(){
 		if(ganador==0){
 			cout<<"\nEs un empate";
 		}
-	cout<<"\nles gustaria jugar de nuevo? preciona 1(yes) para inicia de nuevo: ";
+	
+	
+	cout<<"\nles gustaria jugar de nuevo? preciona 1(yes) para iniciar de nuevo: ";
 	cin>>opcion;
-	k=1;
-	for(int i=0;i<n;i++){
-		for(int j=0;j<n;j++){
-			gato[i][j]=' ';
+	if(opcion==1){
+		k=1;
+		ganador=0;
+		cout<<"Ingrese el tamanio de su tablero (minimo una matriz de 3x3, solo es necesario ingresar un numero entero): "; cin >> n;
+		
+		gato.resize(n,vector<char>(n,' '));
+		for(int i=0;i<n;i++)
+			gato[i].resize(n,' ');
+		
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				gato[i][j]=' ';
+			}
 		}
 	}
 	}
