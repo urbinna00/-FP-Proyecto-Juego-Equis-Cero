@@ -116,11 +116,12 @@ int main(){
 	int opcion=0;
 	string op;
 
-while(opcion!=3){
+while(opcion!=4){
 	cout<<"JUEGO DEL GATO (X/0)"<<endl;
     cout<<"\n1. Iniciar Partida. "<<endl;
-    cout<<"2. Instrucciones."<<endl;
-    cout<<"3. Salir."<<endl;
+    cout<<"2. Puntuaciones. "<<endl;
+    cout<<"3. Instrucciones."<<endl;
+    cout<<"4. finalizar juego."<<endl;
     
 
     cout<<"\n";
@@ -135,22 +136,23 @@ while(opcion!=3){
 			int n,nnew;
 			int k=1,fila,columna,opcion=0;
 			int ganador = 0;
-			cout<<"    EL JUEGO DE EL GATO (X/0)\n";
-			cout<<"formas de ganar: "<<endl;
+			cout<<"\n";
 			cout<<"Ingrese el tamanio de su tablero (minimo una matriz de 3x3, solo es necesario ingresar un numero entero): "; cin >> n;
 			vector<vector<char> > gato(n,vector<char>(n,' '));
+			cout<<"\n";
 	
 			do{
 				imprimir_gato(gato,n);
+				cout<<"\n";
 				do{
-					cout<<"Ronda numero: "<<k<<endl;
 					if(k%2 != 0){
 					do{
 						do{
-							cout<<"Turno del jugador 1";
-							cout<<"\nIngrese las coordenadas de la casilla que desea: ";
+							cout<<"\nTurno del jugador 1";
+							cout<<"\n\nIngrese las coordenadas de la casilla que desea: ";
 							cin>>fila;
 							cin>>columna;
+							cout<<"\n";
 							if (fila>n ||columna>n){
 								cout<<"\nError en la cordenada";
 								cout<<"\n";
@@ -169,9 +171,10 @@ while(opcion!=3){
 						do{
 							do{
 								cout<<"\nTurno del jugador 2";
-								cout<<"\nIngrese las coordenadas de la casilla que desea: ";
+								cout<<"\n\nIngrese las coordenadas de la casilla que desea: ";
 								cin>>fila;
 								cin>>columna;
+								cout<<"\n";
 								if(fila>n ||columna>n){
 									cout<<"\nError en la coordenada";
 									cout<<"\n";
@@ -203,11 +206,12 @@ while(opcion!=3){
 	
 			cout<<"\nDesean jugar de nuevo? Presionen '1' para jugar nuevamente o '2' para salir de la partida: ";
 			cin>>opcion;
+			cout<<"\n";
 			if(opcion==1){
 				k=1;
 				ganador=0;
 				cout<<"Ingrese el tamanio de su tablero (minimo una matriz de 3x3, solo es necesario ingresar un numero entero): "; cin >> n;
-		
+				
 			gato.resize(n,vector<char>(n,' '));
 			for(int i=0;i<n;i++)
 				gato[i].resize(n,' ');
@@ -223,12 +227,18 @@ while(opcion!=3){
 	}
 				break;
     
-	case 2: cout<<"Como jugar?"<<endl;
-			cout<<"\n1. Antes de iniciar, deben escoger el tamanio de la cuadricula con la que desean jugar (Debera tener un minimo de 3x3).\nBasta con ingresar un numero entero."<<endl;
-			cout<<"\n2. Cada jugador dispone de un turno para indicar las coordenadas de la casilla en que desea marcar su 'X' o 'O'.\nPara indicar la coordenada, debera ingresar el numero de la fila y columna separadas por un espacio.\nEjemplo: (1 1)"<<endl;
-			cout<<"\n3. Para ganar una partida debes tener toda una fila, columna o linea diagonal; ocupadas por el mismo signo (X o O)."<<endl;
-			cout<<"\n4. Los puntos se obtendran de la siguiente manera: \nGanador: 1 punto. \nPerdedor: 0 puntos. \nEmpate: 0 puntos para ambos jugadores."<< endl;
-			cout<<""<<endl;
+    case 2:
+    		cout<<"puntuaciones "<<endl;
+    		break;
+    
+	case 3: cout<<"Instrucciones:"<<endl;
+			cout<<"Como se juega"<<endl;
+			cout<<"\n1. Al de iniciar, deben escoger el tamanio de la matriz con la que desean jugar (Debera tener un minimo de 3x3).\nsolo es necesario con ingresar un numero entero."<<endl;
+			cout<<"\n2. Cada jugador dispone de un turno para indicar las coordenadas de la casilla en que desea marcar; el jugador uno marca las 'X' y el jugador 2 los 'O'.\nPara indicar la coordenada, debera ingresar el numero de la fila y columna separadas por un espacio por ejemplo: (1 1)'se ingresan solamente numeros enteros y que esten en el rango de la matriz'"<<endl;
+			cout<<"\n3. Para ganar una partida debes tener toda una fila, columna o linea diagonal; completas por mismo signo ya sea: (X o O)."<<endl;
+			cout<<"\nComo se haran las puntuaciones"<<endl;
+			cout<<"\nLos puntos se obtendran de la siguiente manera: el logre ganar la partida, acumulara 1 punto en su puntaje y el perdedor no acumula ningun punto, En caso de un empate ningun jugador acumulara puntuacion."<< endl;
+			cout<<"\n";
 			break;
             
  }   
