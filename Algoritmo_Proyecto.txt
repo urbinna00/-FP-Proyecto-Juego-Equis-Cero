@@ -12,9 +12,11 @@ Opciones de menú:
 	1)Iniciar partida.
 1.1.Ingresar un nombre para cada jugador. 
 1.2.Determinar el tamaño de la cuadricula de la partida. 
-Deberá ingresar un número "n" y se generará una cuadrícula n*n del número ingresado. 
-1.3.Jugar la cantidad de rondas deseadas; se le preguntará si desea continuar jugando o finalizar la partida.
-1.4.Mostrar el ganador.
+Deberá ingresar un número entero "n" y se generará una cuadrícula n*n del número ingresado. 
+1.3.Jugar la cantidad de rondas deseadas; al finalizar la partida, se mostrará el ganador.
+1.4.Finalizada la partida, se le preguntará si desea continuar jugando o abandonar la partida.
+En caso de volver a jugar, se deberá ingresar nuevamente el tamaño de la cuadrícula con la que desea jugar; 
+caso contrario, saldrá de la partida e irá al menú principal; ahí podrá escoger entre las otras opciones.
 
 	2)Mostrar los datos almacenados.
 2.1.Se almacenarán los datos de cada ronda de la partida en un "archivo txt".
