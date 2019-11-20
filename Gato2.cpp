@@ -234,7 +234,7 @@ while(opcion!=4){
 	case 3: cout<<"Instrucciones:"<<endl;
 			cout<<"Como se juega"<<endl;
 			cout<<"\n1. Al de iniciar, deben escoger el tamanio de la matriz con la que desean jugar (Debera tener un minimo de 3x3).\nsolo es necesario con ingresar un numero entero."<<endl;
-			cout<<"\n2. Cada jugador dispone de un turno para indicar las coordenadas de la casilla en que desea marcar; el jugador uno marca las 'X' y el jugador 2 los 'O'.\nPara indicar la coordenada, debera ingresar el numero de la fila y columna separadas por un espacio por ejemplo: (1 1)'se ingresan solamente numeros enteros y que esten en el rango de la matriz'"<<endl;
+			cout<<"\n2. Cada jugador dispone de un turno para indicar las coordenadas de la casilla en que desea marcar; el jugador uno marca las 'X' y el jugador 2 los 'O'.\nPara indicar la coordenada, debera ingresar el numero de la fila y columna separadas por un espacio por ejemplo: (1 1)\n'se ingresan solamente numeros enteros y que esten en el rango de la matriz'"<<endl;
 			cout<<"\n3. Para ganar una partida debes tener toda una fila, columna o linea diagonal; completas por mismo signo ya sea: (X o O)."<<endl;
 			cout<<"\nComo se haran las puntuaciones"<<endl;
 			cout<<"\nLos puntos se obtendran de la siguiente manera: el logre ganar la partida, acumulara 1 punto en su puntaje y el perdedor no acumula ningun punto, En caso de un empate ningun jugador acumulara puntuacion."<< endl;
