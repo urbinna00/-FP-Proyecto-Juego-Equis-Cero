@@ -327,7 +327,7 @@ int main(){
 						}	
 					}while(opcion==1);
 					
-					guardarPuntaje();
+					guardarPuntaje(); //Función para guardar el puntaje; se complementa con la otra función que almacene los datos.
 					//guardarTodos();
 					
 					}
